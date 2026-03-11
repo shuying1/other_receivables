@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 
 <head>
+    <meta name="referrer" content="no-referrer">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>其他应收款在线管理系统</title>
@@ -113,19 +114,18 @@
             flex-direction: column;
             gap: 10px;
             width: 100%;
-            max-width: 350px;
-            /* 保持最大宽度 */
-            margin: 10px 0;
+            max-width: 400px;
+            margin: 100px auto;
             flex-shrink: 0;
-            margin-top: -80px !important;
-            /*强制应用上移 */
+            align-items: center;
+            justify-content: space-around;
         }
 
         .nav-btn {
             padding: 16px 22px;
             border: none;
             border-radius: 10px;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            background: linear-gradient(135deg, #e6f0ff 0%, #d1e3ff 100%);
             color: #2575fc;
             font-size: 18px;
             font-weight: bold;
@@ -133,7 +133,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
             z-index: 1;
             width: 100%;
             text-align: center;
@@ -141,8 +141,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 60px;
-            /* 设置固定高度 */
+            height: 80px;
+            margin-top: 30px;
         }
 
         .nav-btn .permission-text {
@@ -163,25 +163,6 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
 
-        /* 按钮悬停效果 */
-        .nav-btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(37, 117, 252, 0.1);
-            z-index: -1;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-btn:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
 
         /* 需管理权限文本样式 */
         .permission-text {
@@ -258,7 +239,8 @@
             border: 2px solid #e1e8f0;
             position: relative;
             overflow: hidden;
-            height: 100px; /* 修改后的固定高度 */
+            height: 100px;
+            /* 修改后的固定高度 */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -337,36 +319,8 @@
             color: white;
         }
 
-        /* 添加响应式设计 */
-        @media (min-height: 800px) {
-            .nav-buttons {
-                gap: 20px;
-                margin: 15px 0;
-            }
-
-            .nav-btn {
-                padding: 18px 28px;
-                font-size: 20px;
-                height: 70px;
-                /* 调整高分辨率下的高度 */
-            }
-        }
-
+        /* 响应式设计 */
         @media (max-width: 768px) {
-            .container {
-                height: calc(100vh - 30px);
-                /* 调整小屏幕上的高度 */
-                padding: 10px 5px;
-                /* 增加小屏幕上的边距 */
-            }
-
-            .nav-buttons {
-                max-width: 300px;
-                /* 在小屏幕上减小按钮最大宽度 */
-                width: 90%;
-                /* 使用百分比宽度以适应屏幕 */
-            }
-
             h1 {
                 font-size: 32px;
             }
@@ -379,44 +333,10 @@
                 padding: 14px 20px;
                 font-size: 17px;
                 height: 55px;
-                /* 调整小屏幕下的高度 */
-            }
-            
-            .regions-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 10px;
-            }
-
-            .region-card {
-                height: 70px;
-                padding: 8px 5px;
-            }
-
-            .region-name {
-                font-size: 14px;
-            }
-
-            .filter-btn {
-                padding: 6px 12px;
-                font-size: 14px;
             }
         }
 
         @media (max-width: 480px) {
-            .container {
-                height: calc(100vh - 20px);
-                /* 进一步调整更小屏幕上的高度 */
-                padding: 8px 3px;
-                /* 调整更小屏幕上的边距 */
-            }
-
-            .nav-buttons {
-                max-width: 280px;
-                /* 在更小屏幕上进一步减小按钮最大宽度 */
-                width: 95%;
-                /* 使用更大百分比宽度 */
-            }
-
             h1 {
                 font-size: 26px;
             }
@@ -434,49 +354,6 @@
                 padding: 13px 18px;
                 font-size: 16px;
                 height: 50px;
-                /* 调整更小屏幕下的高度 */
-            }
-            
-            .regions-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-                gap: 8px;
-            }
-
-            .region-card {
-                height: 65px;
-                padding: 6px 4px;
-            }
-
-            .region-name {
-                font-size: 13px;
-            }
-
-            .filter-btn {
-                padding: 4px 8px;
-                font-size: 12px;
-            }
-        }
-
-        /* 新增：超小屏幕适配 */
-        @media (max-width: 360px) {
-            .container {
-                height: calc(100vh - 15px);
-            }
-
-            .nav-buttons {
-                max-width: 250px;
-                width: 100%;
-            }
-
-            h1 {
-                font-size: 22px;
-                margin: 15px 0;
-            }
-
-            .nav-btn {
-                padding: 12px 16px;
-                font-size: 15px;
-                height: 48px;
             }
         }
 
@@ -502,7 +379,7 @@
             animation-delay: 0.2s;
             opacity: 0;
         }
-        
+
         /* 动画效果 */
         @keyframes fadeIn {
             from {
@@ -525,17 +402,16 @@
         footer {
             width: 100%;
             text-align: center;
-            font-size: 18px;
+            font-size: 22px;
             z-index: 1;
             margin-bottom: 10px;
             flex-shrink: 0;
             position: absolute;
             bottom: 0;
             padding: 10px 0;
-            background: transparent;
-            /* 添加透明背景，避免颜色覆盖 */
+            margin-top: 30px;
         }
-        
+
         /* 图片错误处理 */
         img.onerror {
             display: flex;
@@ -544,7 +420,7 @@
             background: #f0f0f0;
             border: 1px solid #ddd;
         }
-        
+
         img.onerror::before {
             content: "图片无法加载";
             display: block;
@@ -562,9 +438,7 @@
             <source
                 src="https://hr-fly.chinaconch.com/hbp-filehub-web/download/bucket-hub/ce3be04a/4be22ca0af1240649f1ecb19f9f05990.mp4"
                 type="video/mp4">
-            <source
-                src="./videos/background.mp4"
-                type="video/mp4">
+            <source src="./videos/background.mp4" type="video/mp4">
             您的浏览器不支持视频背景功能。
         </video>
     </div>
@@ -575,7 +449,10 @@
     <div class="container">
         <header>
             <div class="logo-title-container">
-                <img class="logo" src="./images/logo.png" alt="系统Logo" onerror="this.className='onerror'; "/>
+                <!-- <img class="logo" src="./images/logo.png" alt="系统Logo" onerror="this.className='onerror'; "/> -->
+                <img class="logo"
+                    src="https://cdn.nlark.com/yuque/0/2026/png/12676018/1767599316566-15aefeeb-f8ef-4007-9f22-deb05ac7fea3.png"
+                    alt="系统Logo" />
                 <h1>其他应收款在线管理系统</h1>
             </div>
         </header>
@@ -584,17 +461,22 @@
             <button class="nav-btn"
                 onclick="openLink('https://im.yungongplat.com/weboffice/office/d/360703087935488?share_id=G07yNzmcAa6puu&')">子公司登记
             </button>
-           
-             <button class="nav-btn" onclick="showRegionDashboard()">区域管理看板
+
+            <button class="nav-btn" onclick="showRegionDashboard()">区域管理看板
                 <br />
                 <span class="permission-text">需管理权限</span>
             </button>
-           
+
+            <button class="nav-btn" onclick="openLink('')">
+                股份控制中台<br />
+                <span class="permission-text">需管理权限</span>
+            </button>
+
         </div>
 
         <div>首次登录需授权海螺智联账号</div>
     </div>
-    
+
     <!-- 区域管理看板 -->
     <div class="region-dashboard" id="regionDashboard">
         <div class="region-filters" style="margin: 20px 0 15px;">
@@ -633,13 +515,13 @@
             { name: "上海区域", url: "https://im.yungongplat.com/weboffice/office/d/360703087935488?share_id=G0NgCe7Tm7RGXY&", group: "domestic" },
             { name: "云南区域", url: "https://im.yungongplat.com/weboffice/office/d/360703087935488?share_id=G0hx4GdkXQeZtR&", group: "domestic" },
             { name: "贵州区域", url: "https://im.yungongplat.com/weboffice/office/d/360703087935488?share_id=G09aSqmwGphEYM&", group: "domestic" },
-            
+
             // 多元化公司
             { name: "塑品公司", url: "https://im.yungongplat.com/weboffice/office/d/360703087935488?share_id=G0B5btQ7Ww8AGm&", group: "business" },
             { name: "新能源", url: "https://im.yungongplat.com/weboffice/office/d/360703087935488?share_id=G0w7asA67Hng3x&", group: "business" },
             { name: "多元化", url: "https://im.yungongplat.com/weboffice/office/d/360703087935488?share_id=G02aygzUFfX3wG&", group: "business" },
             { name: "海螺环保", url: "https://im.yungongplat.com/weboffice/office/d/360703087935488?share_id=G0q4kbh2bvrBNH&", group: "business" },
-            
+
             // 海外区域
             { name: "乌兹别克", url: "https://im.yungongplat.com/weboffice/office/d/357084445196288?share_id=G0gF8SrzB1yQSu&", group: "overseas" },
             { name: "印尼区域", url: "", group: "overseas" },
@@ -677,11 +559,11 @@
         }
 
         // 为区域网格添加事件委托
-        document.getElementById('regionsGrid').addEventListener('click', function(e) {
+        document.getElementById('regionsGrid').addEventListener('click', function (e) {
             // 查找点击的元素或其父级是否为区域卡片
             let target = e.target;
-            while(target && target !== this) {
-                if(target.classList.contains('region-card')) {
+            while (target && target !== this) {
+                if (target.classList.contains('region-card')) {
                     const url = target.getAttribute('data-url');
                     openRegion(url);
                     break;
@@ -695,21 +577,21 @@
             document.querySelector('.container').style.display = 'none';
             document.querySelector('.region-dashboard').style.display = 'block';
             document.querySelector('.back-btn').style.display = 'block';
-            
+
             // 初始化卡片之前，先设置默认选中"全部区域"
             initializeRegionCards();
-            
+
             // 获取所有过滤按钮并设置"全部区域"为活跃状态
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
+
             // 默认激活"全部区域"按钮
             const allFilterBtn = document.querySelector('.filter-btn[data-group="all"]');
-            if(allFilterBtn) {
+            if (allFilterBtn) {
                 allFilterBtn.classList.add('active');
             }
-            
+
             // 同时显示所有区域
             filterRegions('all');
         }
@@ -723,7 +605,7 @@
 
         // 区域过滤功能
         document.querySelectorAll('.filter-btn').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 document.querySelectorAll('.filter-btn').forEach(btn => {
                     btn.classList.remove('active');
                 });
@@ -773,11 +655,11 @@
         // 为元素添加涟漪效果
         function addRippleEffect(element) {
             // 检查元素是否已经有涟漪事件监听器
-            if(element.hasAttribute('data-ripple-bound')) {
+            if (element.hasAttribute('data-ripple-bound')) {
                 return;
             }
-            
-            element.addEventListener('click', function(e) {
+
+            element.addEventListener('click', function (e) {
                 const ripple = document.createElement('span');
                 const rect = this.getBoundingClientRect();
                 const size = Math.max(rect.width, rect.height);
@@ -803,13 +685,13 @@
                     ripple.remove();
                 }, 600);
             });
-            
+
             // 标记元素已经绑定了涟漪效果
             element.setAttribute('data-ripple-bound', 'true');
         }
 
         // 页面加载时初始化
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // 添加涟漪动画样式
             const style = document.createElement('style');
             style.textContent = `
@@ -826,7 +708,7 @@
             const backButton = document.createElement('button');
             backButton.className = 'back-btn';
             backButton.textContent = '返回主菜单';
-            backButton.onclick = function() {
+            backButton.onclick = function () {
                 hideRegionDashboard();
             };
             document.body.appendChild(backButton);
